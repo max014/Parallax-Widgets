@@ -1,11 +1,9 @@
 <?php
 /*
-Plugin Name: My widget
-Plugin URI: https:/programmermax.com
-Description: pending
+Plugin Name: My Custom Widgets
+Description: A couple of widgets I made
 Version: 0.1.0
 Author: Max
-Author URI: http://progremmermax.com
 */
 
 // Exit if accessed directly
@@ -16,11 +14,13 @@ if(!defined('ABSPATH')){
 require_once(plugin_dir_path(__FILE__).'/inc/mywidget-scripts.php');
 
 // Load class
-require_once(plugin_dir_path(__FILE__).'/inc/mywidget-class.php');
+require_once(plugin_dir_path(__FILE__).'/inc/MaxParallax.php');
+require_once(plugin_dir_path(__FILE__).'/inc/MaxFloatingDiv.php');
 
 // Register widget
 function register_mywidget(){
-	register_widget('My_Widget');
+	register_widget('MaxParallax');
+	register_widget('MaxFloatingDiv');
 }
 
 // Hook in function

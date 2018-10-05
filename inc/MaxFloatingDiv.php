@@ -1,14 +1,14 @@
 <?php
-class My_Widget extends WP_Widget {
+class MaxFloatingDiv extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'my_widget', // Base ID
-			esc_html__( 'My Widget', 'mw_domain' ), // Name
-			array( 'description' => esc_html__( 'Widget that I made.', 'mw_domain' ), ) // Args
+			'max_floating_div', // Base ID
+			esc_html__( 'Max Floating Div', 'mw_domain' ), // Name
+			array( 'description' => esc_html__( 'Block of text with above screen parallax effect.', 'mw_domain' ), ) // Args
 		);
 		$this->defaults = array(
 			'title'         => '',
@@ -30,14 +30,21 @@ class My_Widget extends WP_Widget {
 
 		// Widget content
 		?>
-		<div class="my_widget" style="background-color:<?php echo $instance['background']; ?>">
+		<div>
+			<div
+				class="floating-div"
+				style="background-color:<?php echo $instance['background']; ?>">
 
-		<?php
-		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-		} ?>
+				<div>
+					<h2 class="my_widget_title">
+						<?php echo $instance['title'] ?>
+					</h2>
 
-			<p class="body_content"><?php echo $instance['body_content']; ?></p>
+					<p class="body_content">
+						<?php echo $instance['body_content']; ?>
+					</p>
+				</div>
+			</div>
 		</div>
 
 		<?php
@@ -53,9 +60,7 @@ class My_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'New title', 'mw_domain' );
-
 		$body_content = ! empty( $instance['body_content'] ) ? $instance['body_content'] : esc_html__( '' );
-
 		$background = ! empty( $instance['background'] ) ? $instance['background'] : esc_html__( '' );
 		?>
 		
@@ -94,7 +99,6 @@ class My_Widget extends WP_Widget {
 				type="color"
 				value="<?php echo esc_attr( $background ); ?>">
 		</p>
-
 		
 		<?php 
 	}
@@ -112,8 +116,9 @@ class My_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
-		$instance['background'] = ( ! empty( $new_instance['background'] ) ) ? sanitize_text_field( $new_instance['background'] ) : '';
 		$instance['body_content'] = ( ! empty( $new_instance['body_content'] ) ) ? sanitize_text_field( $new_instance['body_content'] ) : '';
+		$instance['background'] = ( ! empty( $new_instance['background'] ) ) ? sanitize_text_field( $new_instance['background'] ) : '';
+		
 
 		return $instance;
 	}

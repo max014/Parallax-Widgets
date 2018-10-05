@@ -1,3 +1,18 @@
-.my_widget{
+.my_widget_title,
+.body_content{
+	color: #fff;
+}
+.parallax--bg{
+	height: 300px;
 	padding: 10px;
+	background-position: center;	
+}
+.floating-div{
+	position: relative;
+	height: 300px;
+	padding: 10px;
+	top: -5em;
+	box-shadow: 5px 10px 10px #ccc;
+	border-style: solid;
+    border-width: 1px;
 }
