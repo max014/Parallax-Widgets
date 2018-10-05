@@ -32,15 +32,15 @@ class MaxFloatingDiv extends WP_Widget {
 		?>
 		<div>
 			<div
-				class="floating-div"
+				class="max_floatingdiv--bg"
 				style="background-color:<?php echo $instance['background']; ?>">
 
 				<div>
-					<h2 class="my_widget_title">
+					<h2 class="max_floatingdiv--widget_title">
 						<?php echo $instance['title'] ?>
 					</h2>
 
-					<p class="body_content">
+					<p class="max_floatingdiv--body_content">
 						<?php echo $instance['body_content']; ?>
 					</p>
 				</div>

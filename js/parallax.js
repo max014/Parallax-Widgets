@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 	// Parallax
-	var background = document.getElementsByClassName('parallax--bg');
-	var floatingDiv = document.getElementsByClassName('floating-div');
+	var background = document.getElementsByClassName('max_parallax--bg');
+	var floatingDiv = document.getElementsByClassName('max_floatingdiv--bg');
 	window.onscroll = function(){
 		var scrollY = window.scrollY;
 		widgetLoop(background, floatingDiv);

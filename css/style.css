@@ -1,13 +1,15 @@
-.my_widget_title,
-.body_content{
+.max_parallax--widget_title,
+.max_floatingdiv--widget_title,
+.max_parallax--body_content,
+.max_floatingdiv--body_content{
 	color: #fff;
 }
-.parallax--bg{
+.max_parallax--bg{
 	height: 300px;
 	padding: 10px;
 	background-position: center;	
 }
-.floating-div{
+.max_floatingdiv--bg{
 	position: relative;
 	height: 300px;
 	padding: 10px;
